@@ -1,0 +1,22 @@
+    /* set cac gia tri voi man hinh tuong ung */
+    $mobile-width: 480px;
+    $tablet-width: 768px;
+    $tablet-pro-width: 992px;
+    $desktop-width: 1080px;
+    @mixin mobile {
+    @media (max-width: #{$mobile-width - 1px}) {
+        @content;
+    }
+    }
+
+    @mixin tablet {
+        @media (min-width: #{$tablet-width - 1px}) and (max-width: #{$tablet-pro-width - 1px}) {
+            @content;
+        }
+    }
+
+    @mixin desktop {
+        @media (min-width: #{$tablet-pro-width}) and (max-width: #{$desktop-width}) {
+            @content;
+        }
+    }

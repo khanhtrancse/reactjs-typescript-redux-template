@@ -1,0 +1,717 @@
+// import starting from the src/ folder
+@import './variables.scss';
+@import './color.scss';
+@import './media.scss';
+
+//style
+* {
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+}
+
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+.no-gutter > [class*='col-'] {
+  padding-right: 0;
+  padding-left: 0;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  // color: $lightGrey;
+  letter-spacing: 0.8px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  &::-webkit-scrollbar-thumb {
+    border-radius: 1px;
+    background: rgba(1, 1, 1, 0.3);
+  }
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0.5rem;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+}
+@include mobile {
+  .none-mobile {
+    display: none;
+  }
+  .none-desktop {
+    display: block !important;
+  }
+}
+@include tablet {
+  .none-mobile {
+    display: none;
+  }
+  .none-desktop {
+    display: block !important;
+  }
+}
+@include desktop {
+  .none-mobile {
+    display: none;
+  }
+  .none-desktop {
+    display: block !important;
+  }
+}
+.none-desktop {
+  display: none;
+}
+
+.container {
+  max-width: 1366px;
+  margin: 0 auto;
+}
+.logo {
+  font-size: 1.75rem;
+  letter-spacing: 5px;
+  width: 150px;
+}
+.ant-layout {
+  background: transparent !important;
+  display: inherit !important;
+}
+.ant-layout-header {
+  background: transparent !important;
+  padding: 15px 0 !important;
+  height: auto !important;
+  & a {
+    color: #ffffff;
+    font-size: 16px;
+    -webkit-transition: all 0.4s ease;
+  }
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+#menuHeader {
+  transition: all 3s linear;
+  & .menu-nav {
+    position: relative;
+    z-index: 1;
+    padding: 0 30px;
+    // height: 70px;
+    background: #01b6eb;
+    -webkit-box-shadow: 0px 1px 15px 1px rgba(69, 65, 78, 0.1);
+    box-shadow: 0px 1px 15px 1px rgba(69, 65, 78, 0.1);
+    -moz-border-top-left-radius: 6px;
+    border-top-left-radius: 6px;
+    -moz-border-top-right-radius: 6px;
+    border-top-right-radius: 6px;
+    & .ant-menu-item,
+    & .ant-menu-submenu {
+      & span {
+        color: #ffffff;
+        &:hover {
+          color: #fff;
+        }
+      }
+
+      a {
+        color: #ffffff;
+      }
+    }
+  }
+}
+.ant-menu-horizontal > .ant-menu-item:hover,
+.ant-menu-horizontal > .ant-menu-submenu:hover,
+.ant-menu-horizontal > .ant-menu-item-active,
+.ant-menu-horizontal > .ant-menu-submenu-active,
+.ant-menu-horizontal > .ant-menu-item-open,
+.ant-menu-horizontal > .ant-menu-submenu-open,
+.ant-menu-horizontal > .ant-menu-item-selected,
+.ant-menu-horizontal > .ant-menu-submenu-selected {
+  color: #fff !important;
+  border-bottom: 2px solid #ffffff !important;
+}
+
+.header-menu {
+  background: url(../images/bg/menu.jpg);
+  background-size: cover;
+  padding: 20px;
+  & .card-user {
+    padding: 5px 0;
+    margin: 0;
+    display: table;
+    table-layout: fixed;
+    & .img-user {
+      display: table-cell;
+      text-align: right;
+      padding: 0 5px 0 0;
+      vertical-align: middle;
+      width: 70px;
+      & img {
+        max-width: 70px !important;
+        margin: 0 !important;
+        border-radius: 100%;
+      }
+    }
+    & .detail-user {
+      // display: table-cell;
+      // width: 100%;
+      text-align: left;
+      vertical-align: middle;
+      padding: 0 0 0 15px;
+      & span {
+        display: block;
+        padding: 0 0 0 0;
+        font-size: 1.3rem;
+        font-weight: 400;
+        color: #333333;
+      }
+    }
+  }
+}
+.layout {
+  overflow: hidden;
+  background: #f3f4f9;
+  border-radius: 6px;
+
+  & .ant-layout-content {
+    // overflow-x: hidden;
+    // overflow-y: auto;
+    position: relative;
+    z-index: 0;
+    margin: 15px 0;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    padding: 0 30px;
+    background-color: #f3f4f9;
+    min-height: 100vh;
+  }
+  & .logo-package {
+    cursor: pointer;
+    height: 80px;
+    margin: 0 auto 35px;
+    position: relative;
+    width: 80px;
+    & .package {
+      font-size: 24px;
+      height: 80px;
+      line-height: 80px;
+      margin: 0;
+      width: 80px;
+      background-color: #aaa;
+      // border-radius: 50%;
+      color: #fff;
+      display: inline-block;
+      font-weight: 500;
+      overflow: hidden;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+      vertical-align: middle;
+      position: relative;
+      white-space: nowrap;
+    }
+  }
+  & .FlipClock {
+    & .ContainerTitle {
+      color: #333333;
+    }
+  }
+  & .cards .card {
+    height: 17rem;
+  }
+  & .form-card {
+    padding: 24px;
+    border-radius: 6px;
+    & .ant-select-selection,
+    & .ant-input {
+      background: #f3f4f9;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      font-weight: 600;
+      color: #35a3f6;
+      & .ant-select-selection__placeholder,
+      & .ant-select-search__field__placeholder {
+        color: #35a3f6;
+      }
+    }
+
+    & .ant-select-selection-selected-value,
+    & .ant-select-arrow {
+      color: #35a3f6;
+    }
+    & .ant-form-item {
+      display: flex;
+      @include mobile {
+        display: block;
+      }
+    }
+    & .ant-form-item-control-wrapper {
+      flex: 1;
+    }
+  }
+  & .head_title {
+    background-color: #01b6eb;
+    padding: 1rem 2.2rem;
+    position: relative;
+    @include mobile {
+      padding: 1rem 0.2rem;
+    }
+    & h3 {
+      color: #ffffff;
+    }
+  }
+  & .input_ {
+    background: #ffffff;
+    border: 1px solid #c3c4c9;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: 600;
+  }
+  & .ant-btn-primary {
+    background-color: $primarycolor;
+    font-size: 16px;
+  }
+  & .ant-btn-warning {
+    background-color: #ffb822;
+    color: #fff;
+    font-size: 16px;
+    &:hover {
+      background-color: #fbaa00;
+      border-color: #eea200;
+      color: #111111;
+    }
+  }
+  & .rank {
+    border-right: 1px solid #ebedf2;
+    @include mobile {
+      border-right: none;
+      border-bottom: 1px solid #ebedf2;
+    }
+  }
+  & .text-violet {
+    color: #716aca !important;
+  }
+  & .text-sky {
+    color: #34bfa3 !important;
+  }
+  & .text-red {
+    color: $tintdarkcolor !important;
+  }
+  & .widget_item {
+    padding: 1.1rem 0;
+    border-bottom: 0.07rem dashed #ebedf2;
+    &:first-child {
+      padding-top: 0.8rem;
+    }
+    & h3 {
+      color: #a8a9b6 !important;
+      font-size: 14px !important;
+      text-align: left;
+      font-weight: 500;
+      margin-bottom: 0;
+    }
+    & #number {
+      font-size: 18px !important;
+      font-weight: 600 !important;
+    }
+    & .desc {
+      position: relative;
+      top: -4px;
+      font-size: 9px !important;
+      font-weight: 600 !important;
+      color: #434344 !important;
+      display: block;
+      width: 25px !important;
+      text-align: left !important;
+      display: inline-block;
+      margin-top: 0.21rem;
+    }
+  }
+  & .disabled_input {
+    & .ant-input-suffix {
+      right: 0;
+    }
+    & .ant-input-disabled,
+    &.ant-input-disabled {
+      background: #f3f4f9;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      font-weight: 600;
+      color: #35a3f6;
+      cursor: default;
+    }
+  }
+  & .ant-form-item {
+    margin-bottom: 0;
+  }
+  & .ant-card-head {
+    background-color: #01b6eb;
+    color: #ffffff;
+  }
+}
+.pricing-table,
+.table-header,
+.package-price {
+  transition: all 0.3s ease-out;
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+}
+
+.pricing-table {
+  margin-bottom: 30px;
+  &:hover .brand-hover {
+    background-color: $primarycolor;
+    color: #fff;
+  }
+  & .table-header,
+  & .table-info,
+  & .table-footer {
+    background-color: #fff;
+  }
+  & .table-header {
+    padding: 40px 30px 0;
+    margin-bottom: 7px;
+    color: #fff;
+    border-bottom-left-radius: 50%;
+    background-color: $primarycolor;
+    & .package-name {
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: -10px;
+    }
+    & .package-price {
+      width: 112px;
+      height: 112px;
+      background-color: #111111;
+      color: #fff;
+      margin: 0 auto;
+      text-align: center;
+      border-radius: 50%;
+      position: relative;
+      top: 40px;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
+        0 2px 10px 0 rgba(0, 0, 0, 0.12);
+      & .price {
+        font-size: 1.5rem;
+        line-height: 40px;
+        font-weight: 700;
+        display: inline-block;
+        margin-top: 25px;
+      }
+      & .currency-code {
+        font-size: 12px;
+        font-weight: 700;
+        display: block;
+      }
+    }
+  }
+  & .table-info {
+    padding: 60px 30px;
+    & ul {
+      margin: 0;
+      list-style-type: none;
+      & li {
+        font-size: 16px;
+        line-height: 40px;
+        color: #666;
+        border-bottom: 1px dotted #d6d6d6;
+      }
+    }
+  }
+  & .table-footer {
+    padding: 0 30px 60px;
+  }
+}
+
+.linePackage {
+  // position: absolute;
+  display: table;
+  text-align: center;
+  height: 100%;
+  width: 500px;
+  transform: rotate(90deg) scaleX(1);
+  transform-origin: top left;
+  border-bottom: 3px solid black;
+  margin-left: 50%;
+  @include mobile {
+    display: block;
+    height: auto;
+    width: auto;
+    transform: none;
+    margin-left: 0;
+  }
+}
+// modal
+.ant-modal {
+  min-width: 820px;
+  max-width: 820px;
+  &.modalSub .ant-modal-body,
+  &.modalSub .ant-modal-footer {
+    background: #4aafd1;
+  }
+  & .ant-form-item {
+    margin-bottom: 0;
+    & label {
+      font-size: 10px;
+      text-transform: uppercase;
+    }
+  }
+  & .ant-input {
+    width: 100%;
+    height: 30px;
+    border: 0;
+    border-radius: 4px;
+    margin: 5px 0;
+    padding: 0px 10px;
+    text-align: left;
+    color: #47889f;
+    font-size: 12px;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+    outline: none !important;
+  }
+  & .ant-form-item-label {
+    line-height: normal;
+  }
+}
+// Tree Family
+.tree ul {
+  padding-top: 20px;
+  position: relative;
+
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+}
+
+.tree li {
+  float: left;
+  text-align: center;
+  list-style-type: none;
+  position: relative;
+  padding: 20px 5px 0 5px;
+
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+}
+
+/*We will use ::before and ::after to draw the connectors*/
+
+.tree li::before,
+.tree li::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 50%;
+  border-top: 1px solid #ccc;
+  width: 50%;
+  height: 20px;
+}
+.tree li::after {
+  right: auto;
+  left: 50%;
+  border-left: 1px solid #ccc;
+}
+
+/*We need to remove left-right connectors from elements without 
+any siblings*/
+.tree li:only-child::after,
+.tree li:only-child::before {
+  display: none;
+}
+
+/*Remove space from the top of single children*/
+.tree li:only-child {
+  padding-top: 0;
+}
+
+/*Remove left connector from first child and 
+right connector from last child*/
+.tree li:first-child::before,
+.tree li:last-child::after {
+  border: 0 none;
+}
+/*Adding back the vertical connector to the last nodes*/
+.tree li:last-child::before {
+  border-right: 1px solid #ccc;
+  border-radius: 0 5px 0 0;
+  -webkit-border-radius: 0 5px 0 0;
+  -moz-border-radius: 0 5px 0 0;
+}
+.tree li:first-child::after {
+  border-radius: 5px 0 0 0;
+  -webkit-border-radius: 5px 0 0 0;
+  -moz-border-radius: 5px 0 0 0;
+}
+
+/*Time to add downward connectors from parents*/
+.tree ul ul::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  border-left: 1px solid #ccc;
+  width: 0;
+  height: 20px;
+}
+
+.tree li a {
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: #666;
+  font-family: arial, verdana, tahoma;
+  font-size: 11px;
+  display: inline-block;
+
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+}
+
+/*Time for some hover effects*/
+/*We will apply the hover effect the the lineage of the element also*/
+.tree li a:hover,
+.tree li a:hover + ul li a {
+  background: #c8e4f8;
+  color: #000;
+  border: 1px solid #94a0b4;
+}
+.tree li a {
+  position: relative;
+}
+/*Connector styles on hover*/
+.tree li a:hover + ul li::after,
+.tree li a:hover + ul li::before,
+.tree li a:hover + ul::before,
+.tree li a:hover + ul ul::before {
+  border-color: #94a0b4;
+}
+.tree li a:hover .distributor-details {
+  visibility: visible;
+}
+.distributor-wrap {
+  -webkit-box-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  font-size: 11px;
+  margin: 0 6px;
+}
+.distributor-details {
+  background-color: #f3f3f3;
+  border-radius: 5px;
+  font-weight: 700;
+  left: 125%;
+  min-width: 170px;
+  padding: 5px 8px;
+  position: absolute;
+  top: -14px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  visibility: hidden;
+  z-index: 3;
+  & .details-wrap {
+    overflow-x: auto;
+  }
+  & .details-title {
+    border-bottom: 1px solid #b2e3f1;
+    font-size: 12px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    margin-bottom: 5px;
+  }
+  & .details-row {
+    display: -webkit-box;
+    display: flex;
+    font-size: 8px;
+    margin-bottom: 4px;
+  }
+  & .horizontal-line {
+    background-color: #808285;
+    height: 1px;
+    left: -16px;
+    position: absolute;
+    top: 48px;
+    width: 16px;
+  }
+  & .sloping-line {
+    background-color: #808285;
+    height: 1px;
+    left: -34px;
+    position: absolute;
+    top: 42px;
+    -webkit-transform: rotate(37deg);
+    transform: rotate(37deg);
+    width: 20px;
+  }
+  & .label {
+    -webkit-box-flex: 0;
+    flex: 0 0 88px;
+    text-align: left;
+  }
+}
+.Treant {
+  position: relative;
+  // overflow: hidden;
+  padding-bottom: 20px;
+  width: 100%;
+  margin: 5px auto;
+  @include mobile {
+    width: 1200px;
+  }
+  @include tablet {
+    width: 1200px;
+  }
+}
+// table
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+// sign in sign out
+.aff_dashboard {
+  padding-top: 20vh;
+}
+.login-form {
+  width: 100%;
+}
+.login-form-forgot {
+  float: right;
+}
+.login-form-button {
+  width: 100%;
+}
+.auto-center .ant-layout-content {
+  display: flex;
+  justify-content: center;
+}
