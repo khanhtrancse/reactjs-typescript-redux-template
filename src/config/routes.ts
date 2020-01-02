@@ -13,3 +13,10 @@ export const authRoutes: RouteConfig[] = [
     component: Login,
   },
 ];
+
+export const mainRoutes: RouteConfig[] = [
+  {
+    path: routeName.dashboard,
+    component: Login,
+  },
+];

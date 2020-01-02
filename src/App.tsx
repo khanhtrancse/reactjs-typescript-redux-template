@@ -1,5 +1,5 @@
 import React from 'react';
-import { authRoutes } from './config/routes';
+import { authRoutes, mainRoutes } from './config/routes';
 import { AuthLayout, MainLayout } from './layouts';
 import { Provider, connect } from 'react-redux';
 import { history, configureStore } from './config/store';
@@ -11,7 +11,6 @@ const reducer = configureReducer(history);
 const store = configureStore(reducer);
 
 const App: React.FC = (props: any) => {
-  console.log('User', props.user);
   const user = props.user as UserState;
   return (
     <div>
@@ -27,10 +26,10 @@ const App: React.FC = (props: any) => {
 
       <ConnectedRouter history={history}>
         {user._id ? (
-          <MainLayout routes={authRoutes} />
+          <MainLayout routes={mainRoutes} />
         ) : (
-          <AuthLayout routes={authRoutes} />
-        )}
+            <AuthLayout routes={authRoutes} />
+          )}
       </ConnectedRouter>
     </div>
   );
